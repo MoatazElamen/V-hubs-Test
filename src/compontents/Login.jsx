@@ -2,9 +2,10 @@ import React , {useState} from 'react';
 import classes from '../styles/login.module.css'
 import loginImage from '../assets/login.png'
 import { useHistory } from 'react-router-dom';
-import {useDispatch} from 'react-redux';
+import {useDispatch,useSelector} from 'react-redux';
 import {setUser} from '../redux/actions/user'
 const Login = () => {
+    const {language}= useSelector((state)=>({language:state.languageReducer.lang}));
     const [formData , setFormData] = useState({email:'', password:''})
     const history = useHistory();
     const dispatch = useDispatch();
@@ -25,10 +26,10 @@ const Login = () => {
                 </div>
                 <div className={classes.loginFormContent}>
                     <form onSubmit={handleSubmit}>
-                        <input type="email" name="email" placeholder="Type your personal Email" value={formData.email} onChange={handleChange} />
-                        <input type="password" name="password" placeholder="Type your Password" value={formData.password} onChange={handleChange} />
+                        <input type="email" name="email" placeholder={language === 'en' ? 'please write your email' :'من فضلك ادخل البريد الالكتروني'} value={formData.email} onChange={handleChange} />
+                        <input autoComplete="off" type="password" name="password" placeholder={language === 'en' ? 'please write your password' :'من فضلك ادخل كلمة المرور '} value={formData.password} onChange={handleChange} />
                         <button type="submit" className={classes.submitBtn}>
-                            LOGIN
+                            {language === 'en' ? 'LOGIN' :'تسجيل الدخول'}
                         </button>
                     </form>
                     <div className={classes.signupPointer}>

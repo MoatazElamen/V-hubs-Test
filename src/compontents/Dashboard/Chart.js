@@ -13,11 +13,11 @@ const data = [
   createData('03:00', 300),
   createData('06:00', 600),
   createData('09:00', 800),
+  createData('21:00', 2400),
+  createData('24:00', 2600),
   createData('12:00', 1500),
   createData('15:00', 2000),
   createData('18:00', 2400),
-  createData('21:00', 2400),
-  createData('24:00', 2600),
 ];
 
 export default function Chart() {
@@ -35,15 +35,14 @@ export default function Chart() {
             bottom: 0,
             left: 24,
           }}
+          style={{
+            direction: 'ltr'
+          }}
         >
           <XAxis
             dataKey="time"
-            margin={{
-              right:10
-            }}
             stroke={theme.palette.text.secondary}
             style={theme.typography.body2}
-
           />
           <YAxis
             stroke={theme.palette.text.secondary}

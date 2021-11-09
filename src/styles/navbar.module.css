@@ -51,6 +51,8 @@
     width:35px;
     height:25px;
     margin-inline-end:10px;
+    font-weight:bold;
+    border-radius: 3px;
     background-color:white;
     cursor:pointer;
 }

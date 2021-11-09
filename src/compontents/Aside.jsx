@@ -2,10 +2,9 @@ import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import MainListItems from './Dashboard/MainListItems';
 import { styled} from '@mui/material/styles';
-
+import MenuIcon from '@mui/icons-material/Menu';
 import MuiDrawer from '@mui/material/Drawer';
 
 import Toolbar from '@mui/material/Toolbar';
@@ -53,8 +52,8 @@ const Aside = () => {
               px: [1],
             }}
           >
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
+            <IconButton onClick={toggleDrawer} style={{marginInlineEnd:'7px'}}>
+              <MenuIcon />
             </IconButton>
           </Toolbar>
           <Divider />

@@ -1,0 +1,7 @@
+.nShipmentContainer{
+    width:100%;
+    position:relative;
+    min-height:calc(100vh - 50px);
+    display:grid;
+    place-items:center;
+}

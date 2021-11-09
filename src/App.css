@@ -27,6 +27,8 @@ textarea:focus, input:focus{
 .Mui-selected:visited{
   color:black !important;
 }
-::-webkit-scrollbar{
- width:5px; 
+.inqueryForm{
+  display:flex;
+  flex-direction: column;
+  gap:30px;
 }
