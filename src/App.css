@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.asidebar{
+  position:relative;
+  width:250px;
+  height:calc(100vh - 50px);
+  border-inline-end:1px solid rgba(0, 0, 0, 0.2);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+textarea:focus, input:focus{
+  outline: none;
 }
-
-.App-link {
-  color: #61dafb;
+.aside-container{
+  display:flex;
 }
+.css-tlelie-MuiListItemText-root{
+  color:black;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.Mui-selected{
+  background-color: rgba(165, 203, 95, 0.381) !important;
+}
+.Mui-selected:visited{
+  color:black !important;
+}
+::-webkit-scrollbar{
+ width:5px; 
 }

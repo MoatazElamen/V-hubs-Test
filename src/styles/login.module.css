@@ -1,0 +1,68 @@
+.loginPage {
+    display:flex;
+    position:relative;
+    min-height:calc(100vh - 60px);
+    justify-content:center;
+    align-items:center;
+}
+.loginForm{
+    position:relative;
+    height:auto;
+    min-height:500px;
+    padding:3rem;
+    border:1px solid rgba(0,0,0,.2);
+    width:calc(100% - 20px);
+    max-width:600px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:10px;
+    border-radius:5px;
+}
+.loginFormContent{
+    position: relative;
+    width: 100%;
+}
+.loginFormContent form{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    width:100%;
+    position:relative;
+    gap:20px;
+}
+.loginFormContent form input{
+    position:relative;
+    width:100%;
+    height:45px;
+    outline:none;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    padding-inline:5px;
+    font-family: 'Roboto', sans-serif;
+    font-size:12pt;
+    color:rgba(0, 0, 0, 0.6)
+
+}
+.loginFormContent form input::placeholder{
+    color:rgba(0, 0, 0, 0.4)
+}
+.submitBtn{
+    position:relative;
+    margin-top:50px;
+    min-width:150px;
+    height:45px;
+    background-color: rgb(166, 203, 95);
+    color:white;
+    font-family: 'Roboto', sans-serif;
+    border:none;
+    cursor:pointer;
+    border-radius: 3px;
+}
+.signupPointer{
+    position: relative;
+    margin-top:20px;
+    font-family: 'Roboto', sans-serif;
+    font-size:10pt;
+    color:rgb(166, 203, 95);
+    cursor:pointer;
+}
