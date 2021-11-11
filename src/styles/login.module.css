@@ -66,3 +66,10 @@
     color:rgb(166, 203, 95);
     cursor:pointer;
 }
+.formError{
+    text-transform: capitalize;
+    opacity:.7;
+    font-weight: bold;
+    color:rgba(225, 37, 37,.8);
+    transition:all .5s;
+}
