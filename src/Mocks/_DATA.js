@@ -30,6 +30,7 @@ const genShipsData = ()=>{
                 phoneNumber:faker.phone.phoneNumber(),
                 city:faker.address.city()
             },
+            // consignee{ name , phone1 ,phone2 , contact , address1 , address2, reference number secondar account , city} 
             consignee:{
                 name:faker.internet.userName(),
                 phone1:faker.phone.phoneNumber(),
@@ -42,7 +43,7 @@ const genShipsData = ()=>{
                 city:faker.address.city()
             },
             // shipment (contents , N of pieces , weight , volumetric weight , total price , Delivary Type , Additional Information )
-            shipmentData:{
+            shipment:{
                 contents:utils.createShipContent(),
                 nOfPieces: Math.floor(Math.random() *15),
                 volumetricWeight:Math.floor(Math.random() *100),

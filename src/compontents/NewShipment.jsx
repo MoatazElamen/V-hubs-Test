@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import classes from '../styles/shipment.module.css';
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
@@ -12,31 +12,57 @@ import {ConsigneeData,SenderData,ShipmentDetail} from './NShipmentMultiForm'
 
 const Newshipment = () => {
     const {language}= useSelector((state)=>({language:state.languageReducer.lang}));
-    const steps = language ==='en' ?  ['Sender Data', 'Consignee Data', 'Shipment Detail'] : ['بيانات الراسل', 'بيانات المرسل اليه', 'بيانات الشحنه']
-
+    const steps = language ==='en' ?  ['Sender Data', 'Consignee Data', 'Shipment Detail'] : ['بيانات الراسل', 'بيانات المرسل اليه', 'بيانات الشحنه'];
+    const initialState ={
+        sender:{city:10,
+            primaryAccount:'',
+            secondaryAccount:'',
+            address1:'',
+            address2:'',
+            contact:'',
+            phoneNumber:''},
+        consignee:{city:10,
+            name:'',
+            phone1:'',
+            phone2:'',
+            contact:'',
+            address1:'',
+            address2:'',
+            refNumber:'',
+            senderAccount:''},
+        shipment:{
+            contents:'',
+            nOfPieces:'',
+            volumetricWeight:'',
+            weight:'',
+            totalPrice:'',
+            delivaryType:20,
+            additionalInformation:''
+        }
+    }
+    const [state,setState] = useState(initialState)
+    console.log(state)
     const [activeStep, setActiveStep] = React.useState(0);
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
     };
-    
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
     };
-    
-    
     const handleReset = () => {
+        setState(initialState)
         setActiveStep(0);
     };
     const handleFormRender = ()=>{
         switch (activeStep){
             case 0:
-                return <SenderData/>
+                return <SenderData handleState = {setState} data={state} />
             case 1:
-                return <ConsigneeData/>
+                return <ConsigneeData handleState = {setState} data={state}/>
             case 2:
-                return <ShipmentDetail/>
+                return <ShipmentDetail handleState = {setState} data={state} />
             default:
-                return  <SenderData/>
+                return  <SenderData />
         }
     }
     return (
